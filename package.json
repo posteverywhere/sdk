@@ -1,0 +1,66 @@
+{
+  "name": "posteverywhere",
+  "version": "1.2.1",
+  "description": "Official PostEverywhere Node.js SDK — schedule and publish posts to Instagram, TikTok, YouTube, LinkedIn, Facebook, X (Twitter), Threads & Pinterest from code or AI agents.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "README.md", "LICENSE"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "posteverywhere": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts src/cli.ts --format cjs,esm --dts --clean",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "social-media",
+    "social-media-management",
+    "social-media-scheduler",
+    "instagram",
+    "instagram-api",
+    "instagram-scheduler",
+    "tiktok",
+    "tiktok-api",
+    "youtube",
+    "youtube-api",
+    "linkedin",
+    "linkedin-api",
+    "facebook",
+    "facebook-api",
+    "threads",
+    "twitter",
+    "x",
+    "scheduler",
+    "publishing",
+    "content-calendar",
+    "ai-content",
+    "api",
+    "sdk",
+    "posteverywhere",
+    "hootsuite-alternative",
+    "buffer-alternative"
+  ],
+  "author": "PostEverywhere <support@posteverywhere.ai>",
+  "license": "MIT",
+  "homepage": "https://github.com/posteverywhere/sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/posteverywhere/sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/posteverywhere/sdk/issues",
+    "email": "support@posteverywhere.ai"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
