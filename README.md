@@ -23,7 +23,7 @@ The official Node.js / TypeScript SDK for [PostEverywhere](https://posteverywher
 | 🎛️ **Dashboard** | [app.posteverywhere.ai](https://app.posteverywhere.ai) |
 | 🔑 **Get an API key** | [app.posteverywhere.ai/developers](https://app.posteverywhere.ai/developers) |
 | 💵 **Pricing** | [posteverywhere.ai/pricing](https://posteverywhere.ai/pricing) |
-| 📚 **Help Center** | [posteverywhere.ai/docs/help-center](https://posteverywhere.ai/docs/help-center) |
+| 📚 **Help Center** | [posteverywhere.ai/support](https://posteverywhere.ai/support) |
 | 🐛 **Issues / bug reports** | [github.com/posteverywhere/sdk/issues](https://github.com/posteverywhere/sdk/issues) |
 | 📧 **Support** | [support@posteverywhere.ai](mailto:support@posteverywhere.ai) |
 
@@ -38,7 +38,7 @@ The official Node.js / TypeScript SDK for [PostEverywhere](https://posteverywher
 - **AI-agent friendly** — clean REST envelope, `retryable` flags on every error, idempotency keys, circuit breaker
 - **Transparent pricing** — flat plans from $19/mo, 7-day free trial, cancel anytime
 
-A modern alternative to [Hootsuite](https://posteverywhere.ai/hootsuite-alternative), [Buffer](https://posteverywhere.ai/buffer-alternative), and [Later](https://posteverywhere.ai) — built API-first.
+A modern, API-first alternative to legacy social media management tools — designed for developers, AI agents, and automation-heavy workflows.
 
 ## Install
 
@@ -333,7 +333,7 @@ All eight platforms work on every plan — no per-network add-ons:
 - 🤖 [AI Agents Page](https://posteverywhere.ai/agents) — using PostEverywhere with Claude, ChatGPT, Cursor
 - 💵 [Pricing](https://posteverywhere.ai/pricing) — Starter ($19), Growth ($39), Pro ($79); 7-day free trial
 - ✍️ [Blog](https://posteverywhere.ai/blog) — guides, tutorials, product updates
-- 📚 [Help Center](https://posteverywhere.ai/docs/help-center) — guides, troubleshooting, FAQs
+- 📚 [Help Center](https://posteverywhere.ai/support) — guides, troubleshooting, FAQs
 - 🎛️ [Dashboard (sign in)](https://app.posteverywhere.ai)
 - ✨ [Sign Up — 7-day free trial](https://app.posteverywhere.ai/signup)
 - 🔑 [Get an API key](https://app.posteverywhere.ai/developers)
@@ -354,24 +354,18 @@ Every plan includes every platform — these are the per-platform landing pages:
 - 👍 [Facebook Scheduler](https://posteverywhere.ai/facebook-scheduler)
 - 🐦 X (Twitter), Threads, Pinterest also supported on every plan
 
-## Compared to Other Tools
-
-- [Hootsuite alternative](https://posteverywhere.ai/hootsuite-alternative) — compare features and pricing
-- [Buffer alternative](https://posteverywhere.ai/buffer-alternative) — feature comparison
-- [Later alternative](https://posteverywhere.ai) — different positioning, similar workflow
-
 ## Related
 
 - 🤖 **[`@posteverywhere/mcp`](https://github.com/posteverywhere/mcp)** — MCP server for Claude Code, Claude Desktop, and Cursor ([npm](https://www.npmjs.com/package/@posteverywhere/mcp))
 - 🌐 **[posteverywhere.ai](https://posteverywhere.ai)** — Web dashboard, calendar UI, AI Studio
-- 📚 **[Help Center](https://posteverywhere.ai/docs/help-center)** — Guides, troubleshooting, FAQ
+- 📚 **[Help Center](https://posteverywhere.ai/support)** — Guides, troubleshooting, FAQ
 - 💵 **[Pricing](https://posteverywhere.ai/pricing)** — From $19/mo, 7-day free trial
 
 ## Support
 
 - 📧 Email: [support@posteverywhere.ai](mailto:support@posteverywhere.ai)
 - 🐛 Issues: [github.com/posteverywhere/sdk/issues](https://github.com/posteverywhere/sdk/issues)
-- 💬 [Help Center](https://posteverywhere.ai/docs/help-center)
+- 💬 [Help Center](https://posteverywhere.ai/support)
 
 ## License
 
