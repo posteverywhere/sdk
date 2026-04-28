@@ -9,6 +9,24 @@ The official Node.js / TypeScript SDK for [PostEverywhere](https://posteverywher
 
 > 💡 **Building an AI agent?** Try the companion [`@posteverywhere/mcp`](https://www.npmjs.com/package/@posteverywhere/mcp) package — a [Model Context Protocol](https://modelcontextprotocol.io) server that lets Claude Code, Claude Desktop, Cursor, and other MCP-compatible clients schedule posts using natural language.
 
+## 🔗 Quick Links
+
+| Resource | URL |
+|---|---|
+| 🌐 **Homepage** | [posteverywhere.ai](https://posteverywhere.ai) |
+| 🛠️ **Developers landing page** | [posteverywhere.ai/developers](https://posteverywhere.ai/developers) |
+| 📖 **API Documentation** | [developers.posteverywhere.ai](https://developers.posteverywhere.ai) |
+| 📦 **This SDK on npm** | [npmjs.com/package/posteverywhere](https://www.npmjs.com/package/posteverywhere) |
+| 💻 **This SDK on GitHub** | [github.com/posteverywhere/sdk](https://github.com/posteverywhere/sdk) |
+| 🤖 **MCP server (npm)** | [npmjs.com/package/@posteverywhere/mcp](https://www.npmjs.com/package/@posteverywhere/mcp) |
+| 🤖 **MCP server (GitHub)** | [github.com/posteverywhere/mcp](https://github.com/posteverywhere/mcp) |
+| 🎛️ **Dashboard** | [app.posteverywhere.ai](https://app.posteverywhere.ai) |
+| 🔑 **Get an API key** | [app.posteverywhere.ai/developers](https://app.posteverywhere.ai/developers) |
+| 💵 **Pricing** | [posteverywhere.ai/pricing](https://posteverywhere.ai/pricing) |
+| 📚 **Help Center** | [posteverywhere.ai/docs/help-center](https://posteverywhere.ai/docs/help-center) |
+| 🐛 **Issues / bug reports** | [github.com/posteverywhere/sdk/issues](https://github.com/posteverywhere/sdk/issues) |
+| 📧 **Support** | [support@posteverywhere.ai](mailto:support@posteverywhere.ai) |
+
 ## Why PostEverywhere SDK?
 
 - **One API, eight platforms** — write once, publish to Instagram, TikTok, YouTube, LinkedIn, Facebook, X, Threads, and Pinterest
