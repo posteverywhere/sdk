@@ -321,6 +321,44 @@ All eight platforms work on every plan — no per-network add-ons:
 - 🖼️ [Media Requirements](https://developers.posteverywhere.ai/media-requirements) — file size, format, aspect ratio per platform
 - 🤖 [Building AI Agents](https://developers.posteverywhere.ai/integrations/agents) — system prompt templates and best practices
 - 🚀 [Quick Start Guide](https://developers.posteverywhere.ai/quick-start) — first post in 60 seconds
+- 🔗 [Webhooks](https://developers.posteverywhere.ai/webhooks) — receive publish events on your endpoints
+- 🏷️ [API Scopes](https://developers.posteverywhere.ai/scopes) — fine-grained permission control
+- 📋 [Changelog](https://developers.posteverywhere.ai/changelog) — what's new in the API
+- 🧪 [Testing](https://developers.posteverywhere.ai/testing) — sandbox + local development tips
+
+## PostEverywhere Around the Web
+
+- 🌐 [PostEverywhere Homepage](https://posteverywhere.ai)
+- 🛠️ [Developers Landing Page](https://posteverywhere.ai/developers) — overview of API, SDK, MCP, integrations
+- 🤖 [AI Agents Page](https://posteverywhere.ai/agents) — using PostEverywhere with Claude, ChatGPT, Cursor
+- 💵 [Pricing](https://posteverywhere.ai/pricing) — Starter ($19), Growth ($39), Pro ($79); 7-day free trial
+- ✍️ [Blog](https://posteverywhere.ai/blog) — guides, tutorials, product updates
+- 📚 [Help Center](https://posteverywhere.ai/docs/help-center) — guides, troubleshooting, FAQs
+- 🎛️ [Dashboard (sign in)](https://app.posteverywhere.ai)
+- ✨ [Sign Up — 7-day free trial](https://app.posteverywhere.ai/signup)
+- 🔑 [Get an API key](https://app.posteverywhere.ai/developers)
+- 📦 [Node.js SDK (npm — this package)](https://www.npmjs.com/package/posteverywhere)
+- 💻 [Node.js SDK (GitHub — this repo)](https://github.com/posteverywhere/sdk)
+- 📦 [MCP Server (npm)](https://www.npmjs.com/package/@posteverywhere/mcp)
+- 💻 [MCP Server (GitHub)](https://github.com/posteverywhere/mcp)
+- 🏢 [PostEverywhere on GitHub](https://github.com/posteverywhere)
+
+## Per-Platform Schedulers
+
+Every plan includes every platform — these are the per-platform landing pages:
+
+- 📷 [Instagram Scheduler](https://posteverywhere.ai/instagram-scheduler)
+- 🎵 [TikTok Scheduler](https://posteverywhere.ai/tiktok-scheduler)
+- 📺 [YouTube Scheduler](https://posteverywhere.ai/youtube-scheduler)
+- 💼 [LinkedIn Scheduler](https://posteverywhere.ai/linkedin-scheduler)
+- 👍 [Facebook Scheduler](https://posteverywhere.ai/facebook-scheduler)
+- 🐦 X (Twitter), Threads, Pinterest also supported on every plan
+
+## Compared to Other Tools
+
+- [Hootsuite alternative](https://posteverywhere.ai/hootsuite-alternative) — compare features and pricing
+- [Buffer alternative](https://posteverywhere.ai/buffer-alternative) — feature comparison
+- [Later alternative](https://posteverywhere.ai) — different positioning, similar workflow
 
 ## Related
 
