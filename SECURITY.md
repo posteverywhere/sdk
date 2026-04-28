@@ -1,6 +1,6 @@
 # Security Policy
 
-The [PostEverywhere Node.js SDK](https://www.npmjs.com/package/posteverywhere) handles API keys that grant access to social media accounts and content publishing. We take security seriously and appreciate responsible disclosure.
+The [PostEverywhere Node.js SDK](https://www.npmjs.com/package/@posteverywhere/sdk) handles API keys that grant access to social media accounts and content publishing. We take security seriously and appreciate responsible disclosure.
 
 ## Reporting a Vulnerability
 
@@ -30,7 +30,7 @@ We provide security fixes for the latest minor version of the SDK. Older version
 
 - Vulnerabilities in the SDK code itself (auth bypass, credential leakage, prototype pollution, etc.)
 - Vulnerabilities in the [PostEverywhere REST API](https://developers.posteverywhere.ai) reachable via the SDK
-- Supply-chain concerns affecting the published [npm package](https://www.npmjs.com/package/posteverywhere)
+- Supply-chain concerns affecting the published [npm package](https://www.npmjs.com/package/@posteverywhere/sdk)
 
 ## What's not in scope
 

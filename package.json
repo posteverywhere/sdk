@@ -1,5 +1,5 @@
 {
-  "name": "posteverywhere",
+  "name": "@posteverywhere/sdk",
   "version": "1.2.1",
   "description": "Official PostEverywhere Node.js SDK — schedule and publish posts to Instagram, TikTok, YouTube, LinkedIn, Facebook, X (Twitter), Threads & Pinterest from code or AI agents.",
   "main": "dist/index.js",

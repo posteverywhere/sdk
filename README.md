@@ -1,7 +1,7 @@
 # PostEverywhere — Official Node.js SDK
 
-[![npm version](https://img.shields.io/npm/v/posteverywhere.svg?style=flat-square)](https://www.npmjs.com/package/posteverywhere)
-[![npm downloads](https://img.shields.io/npm/dw/posteverywhere.svg?style=flat-square)](https://www.npmjs.com/package/posteverywhere)
+[![npm version](https://img.shields.io/npm/v/%40posteverywhere%2Fsdk.svg?style=flat-square)](https://www.npmjs.com/package/@posteverywhere/sdk)
+[![npm downloads](https://img.shields.io/npm/dw/%40posteverywhere%2Fsdk.svg?style=flat-square)](https://www.npmjs.com/package/@posteverywhere/sdk)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/posteverywhere/sdk?style=flat-square)](https://github.com/posteverywhere/sdk)
 
@@ -16,7 +16,7 @@ The official Node.js / TypeScript SDK for [PostEverywhere](https://posteverywher
 | 🌐 **Homepage** | [posteverywhere.ai](https://posteverywhere.ai) |
 | 🛠️ **Developers landing page** | [posteverywhere.ai/developers](https://posteverywhere.ai/developers) |
 | 📖 **API Documentation** | [developers.posteverywhere.ai](https://developers.posteverywhere.ai) |
-| 📦 **This SDK on npm** | [npmjs.com/package/posteverywhere](https://www.npmjs.com/package/posteverywhere) |
+| 📦 **This SDK on npm** | [npmjs.com/package/@posteverywhere/sdk](https://www.npmjs.com/package/@posteverywhere/sdk) |
 | 💻 **This SDK on GitHub** | [github.com/posteverywhere/sdk](https://github.com/posteverywhere/sdk) |
 | 🤖 **MCP server (npm)** | [npmjs.com/package/@posteverywhere/mcp](https://www.npmjs.com/package/@posteverywhere/mcp) |
 | 🤖 **MCP server (GitHub)** | [github.com/posteverywhere/mcp](https://github.com/posteverywhere/mcp) |
@@ -43,21 +43,21 @@ A modern, API-first alternative to legacy social media management tools — desi
 ## Install
 
 ```bash
-npm install posteverywhere
+npm install @posteverywhere/sdk
 ```
 
 ```bash
-pnpm add posteverywhere
+pnpm add @posteverywhere/sdk
 ```
 
 ```bash
-yarn add posteverywhere
+yarn add @posteverywhere/sdk
 ```
 
 ## Quick Start
 
 ```typescript
-import PostEverywhere from 'posteverywhere';
+import PostEverywhere from '@posteverywhere/sdk';
 
 const client = new PostEverywhere({
   apiKey: 'pe_live_your_api_key_here',
@@ -256,7 +256,7 @@ import PostEverywhere, {
   ValidationError,
   InsufficientCreditsError,
   PostEverywhereError,
-} from 'posteverywhere';
+} from '@posteverywhere/sdk';
 
 try {
   await client.posts.create({ content: 'Hello!' });
@@ -337,7 +337,7 @@ All eight platforms work on every plan — no per-network add-ons:
 - 🎛️ [Dashboard (sign in)](https://app.posteverywhere.ai)
 - ✨ [Sign Up — 7-day free trial](https://app.posteverywhere.ai/signup)
 - 🔑 [Get an API key](https://app.posteverywhere.ai/developers)
-- 📦 [Node.js SDK (npm — this package)](https://www.npmjs.com/package/posteverywhere)
+- 📦 [Node.js SDK (npm — this package)](https://www.npmjs.com/package/@posteverywhere/sdk)
 - 💻 [Node.js SDK (GitHub — this repo)](https://github.com/posteverywhere/sdk)
 - 📦 [MCP Server (npm)](https://www.npmjs.com/package/@posteverywhere/mcp)
 - 💻 [MCP Server (GitHub)](https://github.com/posteverywhere/mcp)

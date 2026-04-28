@@ -1,6 +1,6 @@
 # Changelog — `posteverywhere` Node.js SDK
 
-All notable changes to the [PostEverywhere Node.js SDK](https://www.npmjs.com/package/posteverywhere) are documented in this file. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+All notable changes to the [PostEverywhere Node.js SDK](https://www.npmjs.com/package/@posteverywhere/sdk) are documented in this file. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [1.2.1] — 2026-04-28
 
@@ -47,7 +47,7 @@ All notable changes to the [PostEverywhere Node.js SDK](https://www.npmjs.com/pa
 
 ## Resources
 
-- 📦 **[npm package](https://www.npmjs.com/package/posteverywhere)**
+- 📦 **[npm package](https://www.npmjs.com/package/@posteverywhere/sdk)**
 - 💻 **[GitHub repository](https://github.com/posteverywhere/sdk)**
 - 🤖 **[Companion MCP server](https://github.com/posteverywhere/mcp)** for Claude Code, Claude Desktop, and Cursor
 - 📖 **[Full API documentation](https://developers.posteverywhere.ai)**

@@ -1,6 +1,6 @@
 # Contributing to the PostEverywhere Node.js SDK
 
-Thanks for your interest in contributing to the [PostEverywhere SDK](https://www.npmjs.com/package/posteverywhere)! This guide covers reporting issues, proposing features, and submitting code.
+Thanks for your interest in contributing to the [PostEverywhere SDK](https://www.npmjs.com/package/@posteverywhere/sdk)! This guide covers reporting issues, proposing features, and submitting code.
 
 ## TL;DR
 
