@@ -3,6 +3,10 @@ import { Accounts } from './resources/accounts';
 import { Posts } from './resources/posts';
 import { Media } from './resources/media';
 import { AI } from './resources/ai';
+import { Me } from './resources/me';
+import { Campaigns } from './resources/campaigns';
+import { Analytics } from './resources/analytics';
+import { Webhooks } from './resources/webhooks';
 import type { PostEverywhereConfig } from './types';
 
 /**
@@ -12,7 +16,7 @@ import type { PostEverywhereConfig } from './types';
  *
  * @example
  * ```typescript
- * import PostEverywhere from 'posteverywhere';
+ *  import PostEverywhere from '@posteverywhere/sdk';
  *
  * const client = new PostEverywhere({ apiKey: 'pe_live_...' });
  *
@@ -50,6 +54,10 @@ class PostEverywhere {
   public readonly posts: Posts;
   public readonly media: Media;
   public readonly ai: AI;
+  public readonly me: Me;
+  public readonly campaigns: Campaigns;
+  public readonly analytics: Analytics;
+  public readonly webhooks: Webhooks;
 
   constructor(config: PostEverywhereConfig) {
     const client = new HttpClient(config);
@@ -57,6 +65,10 @@ class PostEverywhere {
     this.posts = new Posts(client);
     this.media = new Media(client);
     this.ai = new AI(client);
+    this.me = new Me(client);
+    this.campaigns = new Campaigns(client);
+    this.analytics = new Analytics(client);
+    this.webhooks = new Webhooks(client);
   }
 }
 
@@ -70,15 +82,21 @@ export type {
   PostEverywhereConfig,
   Account,
   ListAccountsResponse,
+  AccountHealth,
   Post,
   PostDestination,
   PostStatus,
   ListPostsParams,
   ListPostsResponse,
+  ListPostsAdvancedParams,
   CreatePostParams,
   CreatePostResponse,
   UpdatePostParams,
   PostResultsResponse,
+  BulkCreatePostResult,
+  BulkCreatePostsResponse,
+  RetryFailedPostsParams,
+  RetryFailedPostsResponse,
   MediaItem,
   MediaType,
   ListMediaParams,
@@ -90,6 +108,26 @@ export type {
   AspectRatio,
   GenerateImageParams,
   GenerateImageResponse,
+  CaptionTone,
+  CaptionLength,
+  CaptionPlatform,
+  GenerateCaptionParams,
+  GenerateCaptionResponse,
+  MeResponse,
+  Campaign,
+  ListCampaignsParams,
+  ListCampaignsResponse,
+  CreateCampaignParams,
+  UpdateCampaignParams,
+  AnalyticsSummaryParams,
+  AnalyticsSummaryResponse,
+  WebhookEventType,
+  Webhook,
+  WebhookWithSecret,
+  ListWebhooksResponse,
+  CreateWebhookParams,
+  UpdateWebhookParams,
+  TestWebhookResponse,
 } from './types';
 
 export {

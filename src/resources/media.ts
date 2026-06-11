@@ -77,4 +77,25 @@ export class Media {
   async complete(mediaId: string): Promise<CompleteMediaResponse> {
     return this.client.post(`/api/v1/media/${mediaId}/complete`);
   }
+
+  /**
+   * Import an image from a public URL into the media library — one call.
+   * Server fetches the bytes, stores them, returns a ready-to-use media_id.
+   *
+   * Image-only, 25 MB cap. For local files or videos, use `upload()` (the 3-step flow).
+   */
+  async uploadFromUrl(params: { url: string; filename?: string }): Promise<{
+    media_id: string;
+    media_ids: string[];
+    media_status: 'ready';
+    type: 'image';
+    url: string;
+    filename: string;
+    size: number;
+    content_type: string;
+    source_url: string;
+    next_step: string;
+  }> {
+    return this.client.post('/api/v1/media/upload-from-url', params);
+  }
 }

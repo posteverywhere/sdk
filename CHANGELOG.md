@@ -2,6 +2,16 @@
 
 All notable changes to the [PostEverywhere Node.js SDK](https://www.npmjs.com/package/@posteverywhere/sdk) are documented in this file. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.1] — 2026-05-24
+
+### Docs
+- README now documents the new `client.media.uploadFromUrl()` helper (shipped in 1.3.0 but missing from the README).
+
+## [1.3.0] — 2026-05-24
+
+### Added
+- `client.media.uploadFromUrl({ url, filename? })` — import an image from a public URL into the media library with a single call. Server fetches the bytes, stores them on Cloudflare Images, and returns a ready-to-attach `media_id`. Image-only (JPEG, PNG, GIF, WebP, HEIC, HEIF), 25 MB cap. For local files or videos, keep using `client.media.upload(...)` (the 3-step flow).
+
 ## [1.2.1] — 2026-04-28
 
 ### Added

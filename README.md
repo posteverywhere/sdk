@@ -185,24 +185,46 @@ const results = await Promise.allSettled(
 
 ## Media
 
-Three-step upload flow handled automatically — get presigned URL → upload bytes → mark complete.
+Two paths depending on where your file lives:
+
+### One-call URL import (image-only, 25 MB cap) — **new in v1.3.0**
+
+If your image is already at a public URL (web search result, OG image, hosted screenshot), this is the fastest path. Server fetches the bytes and returns a ready-to-attach `media_id`.
+
+```typescript
+const media = await client.media.uploadFromUrl({
+  url: 'https://example.com/hero.webp',
+});
+
+await client.posts.create({
+  content: 'Photo post!',
+  account_ids: [123],
+  media_ids: [media.media_id],
+});
+```
+
+### Local files / videos / >25 MB images (3-step flow handled internally)
+
+For local files or videos, `client.media.upload(...)` handles the full presign → PUT → complete dance internally.
 
 ```typescript
 import fs from 'fs';
 
-// Upload (full 3-step flow handled internally)
 const media = await client.media.upload(
   fs.readFileSync('photo.jpg'),
   { filename: 'photo.jpg', contentType: 'image/jpeg' }
 );
 
-// Use it in a post
 await client.posts.create({
   content: 'Photo post!',
   media_ids: [media.id],
   publish_now: true,
 });
+```
 
+### Library management
+
+```typescript
 // List your media library
 const { media: files } = await client.media.list({ type: 'image' });
 

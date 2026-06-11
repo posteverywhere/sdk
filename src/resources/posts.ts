@@ -7,6 +7,10 @@ import type {
   CreatePostResponse,
   UpdatePostParams,
   PostResultsResponse,
+  ListPostsAdvancedParams,
+  BulkCreatePostsResponse,
+  RetryFailedPostsParams,
+  RetryFailedPostsResponse,
 } from '../types';
 
 export class Posts {
@@ -23,6 +27,23 @@ export class Posts {
     return this.client.get(`/api/v1/posts${qs ? `?${qs}` : ''}`);
   }
 
+  /**
+   * List posts with the FULL set of v1 filters (since 2026-06-11):
+   * comma-separated multi-status, multi-platform, account_id, campaign_id,
+   * date ranges, content search, sort + order.
+   *
+   * The basic `list()` method is kept for backwards compatibility; use this
+   * for any non-trivial query.
+   */
+  async listAdvanced(params?: ListPostsAdvancedParams): Promise<ListPostsResponse> {
+    const query = new URLSearchParams();
+    for (const [k, v] of Object.entries(params || {})) {
+      if (v !== undefined && v !== null) query.set(k, String(v));
+    }
+    const qs = query.toString();
+    return this.client.get(`/api/v1/posts${qs ? `?${qs}` : ''}`);
+  }
+
   /** Get a single post by ID */
   async get(id: string): Promise<Post> {
     return this.client.get(`/api/v1/posts/${id}`);
@@ -31,6 +52,14 @@ export class Posts {
   /** Create and schedule a post */
   async create(params: CreatePostParams): Promise<CreatePostResponse> {
     return this.client.post('/api/v1/posts', params);
+  }
+
+  /**
+   * Create up to 50 posts in a single API call (counts as ONE API-rate-limit hit).
+   * Returns per-item success/error so you can handle partial failures.
+   */
+  async bulkCreate(posts: CreatePostParams[]): Promise<BulkCreatePostsResponse> {
+    return this.client.post('/api/v1/posts/bulk', { posts });
   }
 
   /** Update a scheduled or draft post */
@@ -51,5 +80,13 @@ export class Posts {
   /** Retry all failed destinations for a post */
   async retry(id: string): Promise<{ message: string; retried: number }> {
     return this.client.post(`/api/v1/posts/${id}/retry`);
+  }
+
+  /**
+   * Bulk-retry every failed destination matching a filter (account_id,
+   * platform, date range, post_ids). Refuses when no filter is supplied.
+   */
+  async retryFailed(params: RetryFailedPostsParams): Promise<RetryFailedPostsResponse> {
+    return this.client.post('/api/v1/posts/retry-failed', params);
   }
 }
