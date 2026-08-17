@@ -20,6 +20,8 @@ The official Node.js / TypeScript SDK for [PostEverywhere](https://posteverywher
 | 💻 **This SDK on GitHub** | [github.com/posteverywhere/sdk](https://github.com/posteverywhere/sdk) |
 | 🤖 **MCP server (npm)** | [npmjs.com/package/@posteverywhere/mcp](https://www.npmjs.com/package/@posteverywhere/mcp) |
 | 🤖 **MCP server (GitHub)** | [github.com/posteverywhere/mcp](https://github.com/posteverywhere/mcp) |
+| ⌨️ **CLI & Agent Skill (npm)** | [npmjs.com/package/@posteverywhere/cli](https://www.npmjs.com/package/@posteverywhere/cli) |
+| ⌨️ **CLI & Agent Skill (GitHub)** | [github.com/posteverywhere/cli](https://github.com/posteverywhere/cli) |
 | 🎛️ **Dashboard** | [app.posteverywhere.ai](https://app.posteverywhere.ai) |
 | 🔑 **Get an API key** | [app.posteverywhere.ai/developers](https://app.posteverywhere.ai/developers) |
 | 💵 **Pricing** | [posteverywhere.ai/pricing](https://posteverywhere.ai/pricing) |
