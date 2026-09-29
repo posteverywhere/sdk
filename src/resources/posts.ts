@@ -77,6 +77,11 @@ export class Posts {
     return this.client.get(`/api/v1/posts/${id}/results`);
   }
 
+  /** @deprecated Use results(). Alias kept because older SDK docs referenced getResults(). */
+  async getResults(id: string): Promise<PostResultsResponse> {
+    return this.results(id);
+  }
+
   /** Retry all failed destinations for a post */
   async retry(id: string): Promise<{ message: string; retried: number }> {
     return this.client.post(`/api/v1/posts/${id}/retry`);

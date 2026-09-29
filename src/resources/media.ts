@@ -47,22 +47,36 @@ export class Media {
   ): Promise<CompleteMediaResponse> {
     const fileSize = file.size;
 
-    // Step 1: Get presigned upload URL
+    // Step 1: Get a presigned upload URL (reusable for retries within its 1h TTL).
     const presign = await this.client.post<UploadResponse>('/api/v1/media/upload', {
       filename: options.filename,
       content_type: options.contentType,
       file_size: fileSize,
     });
 
-    // Step 2: Upload file to presigned URL
-    await this.client.uploadToPresignedUrl(presign.upload_url, file, options.contentType);
-
-    // Step 3: Complete the upload
-    const complete = await this.client.post<CompleteMediaResponse>(
-      `/api/v1/media/${presign.media_id}/complete`
-    );
-
-    return complete;
+    // Steps 2 + 3 with recovery. A PUT can return 200 yet not fully land the bytes on a
+    // flaky connection — the exact cause of "/complete: file not found in R2". When
+    // /complete reports the file isn't there, re-PUT and verify again rather than failing.
+    // The PUT itself already retries network blips internally; this handles the
+    // got-200-but-bytes-missing case. Any other /complete error is surfaced immediately.
+    const MAX_CYCLES = 3;
+    let lastErr: unknown;
+    for (let cycle = 1; cycle <= MAX_CYCLES; cycle++) {
+      await this.client.uploadToPresignedUrl(presign.upload_url, file, options.contentType);
+      try {
+        return await this.client.post<CompleteMediaResponse>(
+          `/api/v1/media/${presign.media_id}/complete`
+        );
+      } catch (err: any) {
+        const notLanded = /not found|make sure you uploaded|uploaded the file/i.test(
+          String(err?.message || '')
+        );
+        if (!notLanded || cycle === MAX_CYCLES) throw err;
+        lastErr = err;
+        await new Promise((r) => setTimeout(r, 500 * cycle)); // brief backoff before re-PUT
+      }
+    }
+    throw lastErr;
   }
 
   /**

@@ -115,20 +115,59 @@ export class HttpClient {
     return this.request<T>('DELETE', path);
   }
 
-  // Upload binary to a presigned URL (not authenticated via API key)
-  async uploadToPresignedUrl(url: string, file: Blob, contentType: string): Promise<void> {
-    const response = await fetch(url, {
-      method: 'PUT',
-      headers: { 'Content-Type': contentType },
-      body: file,
-    });
+  // Upload binary to a presigned URL (not authenticated via API key).
+  // Backward-compatible: the success path is unchanged. Previously this did a SINGLE PUT
+  // and threw on the first failure — a flaky network dropping the PUT mid-stream was the
+  // #1 cause of "file not found in R2" on /complete. Now transient failures (network
+  // errors, timeouts, 5xx) retry with exponential backoff; a 4xx (e.g. expired presigned
+  // URL) still fails fast since a retry can't help.
+  async uploadToPresignedUrl(
+    url: string,
+    file: Blob,
+    contentType: string,
+    opts: { retries?: number; timeoutMs?: number } = {}
+  ): Promise<void> {
+    const retries = Math.max(1, opts.retries ?? 3);
+    const timeoutMs = opts.timeoutMs ?? 120_000; // 2 min — large files on slow links
+    let lastErr: unknown;
 
-    if (!response.ok) {
-      throw new PostEverywhereError(
-        `File upload failed: ${response.status} ${response.statusText}`,
-        response.status
-      );
+    for (let attempt = 1; attempt <= retries; attempt++) {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), timeoutMs);
+      let response: Response | undefined;
+      try {
+        response = await fetch(url, {
+          method: 'PUT',
+          headers: { 'Content-Type': contentType },
+          body: file,
+          signal: controller.signal,
+        });
+      } catch (err) {
+        lastErr = err; // network drop / timeout (AbortError) — retry
+      } finally {
+        clearTimeout(timer);
+      }
+
+      if (response) {
+        if (response.ok) return; // landed
+        if (response.status >= 400 && response.status < 500) {
+          throw new PostEverywhereError(
+            `File upload rejected: ${response.status} ${response.statusText}`,
+            response.status
+          );
+        }
+        lastErr = new PostEverywhereError(
+          `File upload failed: ${response.status} ${response.statusText}`,
+          response.status
+        ); // 5xx — transient, retry
+      }
+
+      if (attempt < retries) await this.sleep(500 * 2 ** (attempt - 1)); // 0.5s, 1s, 2s
     }
+
+    throw lastErr instanceof Error
+      ? lastErr
+      : new PostEverywhereError('File upload failed after multiple attempts', 0);
   }
 
   private sleep(ms: number): Promise<void> {

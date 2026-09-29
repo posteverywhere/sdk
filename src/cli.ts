@@ -61,7 +61,7 @@ async function main() {
     print('');
     print('Links:');
     print('  Dashboard:     https://app.posteverywhere.ai');
-    print('  API Reference: https://developers.posteverywhere.ai');
+    print('  API Reference: https://posteverywhere.ai/docs');
     print('  Docs:          https://posteverywhere.ai/docs');
     print('  Sign up:       https://app.posteverywhere.ai/signup');
     print('');

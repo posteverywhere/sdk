@@ -191,7 +191,7 @@ export interface GenerateImageResponse {
 
 export type CaptionTone = 'professional' | 'casual' | 'witty' | 'enthusiastic' | 'urgent' | 'inspirational';
 export type CaptionLength = 'short' | 'medium' | 'long';
-export type CaptionPlatform = 'instagram' | 'facebook' | 'x' | 'twitter' | 'linkedin' | 'youtube' | 'tiktok' | 'threads' | 'pinterest' | 'bluesky';
+export type CaptionPlatform = 'instagram' | 'facebook' | 'x' | 'twitter' | 'linkedin' | 'youtube' | 'tiktok' | 'threads' | 'pinterest' | 'bluesky' | 'wordpress';
 
 export interface GenerateCaptionParams {
   topic: string;

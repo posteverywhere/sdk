@@ -2,6 +2,16 @@
 
 All notable changes to the [PostEverywhere Node.js SDK](https://www.npmjs.com/package/@posteverywhere/sdk) are documented in this file. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- Types for WordPress blog posts (`platform_content.wordpress`) and `wordpress` as a caption platform.
+
+## [1.4.2] — 2026-07-11
+
+### Added
+- `client.posts.getResults(id)` — deprecated alias for `client.posts.results(id)`. Older SDK documentation referenced `getResults()`, so code copied from those docs threw `client.posts.getResults is not a function`. The alias restores that name (it just calls `results()`); new code should prefer `results()`.
+
 ## [1.3.1] — 2026-05-24
 
 ### Docs

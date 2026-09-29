@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/posteverywhere/sdk?style=flat-square)](https://github.com/posteverywhere/sdk)
 
-The official Node.js / TypeScript SDK for [PostEverywhere](https://posteverywhere.ai) — schedule and publish posts to **Instagram, TikTok, YouTube, LinkedIn, Facebook, X (Twitter), Threads, and Pinterest** from a single API. Build social media scheduling, content automation, and AI agent workflows in minutes.
+The official Node.js / TypeScript SDK for [PostEverywhere](https://posteverywhere.ai) — schedule and publish posts to **Instagram, TikTok, YouTube, LinkedIn, Facebook, X (Twitter), Threads, Pinterest, Bluesky, Telegram and Discord**, plus blog posts to **WordPress** from a single API. Build social media scheduling, content automation, and AI agent workflows in minutes.
 
 > 💡 **Building an AI agent?** Try the companion [`@posteverywhere/mcp`](https://www.npmjs.com/package/@posteverywhere/mcp) package — a [Model Context Protocol](https://modelcontextprotocol.io) server that lets Claude Code, Claude Desktop, Cursor, and other MCP-compatible clients schedule posts using natural language.
 
@@ -15,13 +15,11 @@ The official Node.js / TypeScript SDK for [PostEverywhere](https://posteverywher
 |---|---|
 | 🌐 **Homepage** | [posteverywhere.ai](https://posteverywhere.ai) |
 | 🛠️ **Developers landing page** | [posteverywhere.ai/developers](https://posteverywhere.ai/developers) |
-| 📖 **API Documentation** | [developers.posteverywhere.ai](https://developers.posteverywhere.ai) |
+| 📖 **API Documentation** | [posteverywhere.ai/docs](https://posteverywhere.ai/docs) |
 | 📦 **This SDK on npm** | [npmjs.com/package/@posteverywhere/sdk](https://www.npmjs.com/package/@posteverywhere/sdk) |
 | 💻 **This SDK on GitHub** | [github.com/posteverywhere/sdk](https://github.com/posteverywhere/sdk) |
 | 🤖 **MCP server (npm)** | [npmjs.com/package/@posteverywhere/mcp](https://www.npmjs.com/package/@posteverywhere/mcp) |
 | 🤖 **MCP server (GitHub)** | [github.com/posteverywhere/mcp](https://github.com/posteverywhere/mcp) |
-| ⌨️ **CLI & Agent Skill (npm)** | [npmjs.com/package/@posteverywhere/cli](https://www.npmjs.com/package/@posteverywhere/cli) |
-| ⌨️ **CLI & Agent Skill (GitHub)** | [github.com/posteverywhere/cli](https://github.com/posteverywhere/cli) |
 | 🎛️ **Dashboard** | [app.posteverywhere.ai](https://app.posteverywhere.ai) |
 | 🔑 **Get an API key** | [app.posteverywhere.ai/developers](https://app.posteverywhere.ai/developers) |
 | 💵 **Pricing** | [posteverywhere.ai/pricing](https://posteverywhere.ai/pricing) |
@@ -89,7 +87,7 @@ const scheduled = await client.posts.create({
 2. **[Connect your social accounts](https://app.posteverywhere.ai/accounts)** in the dashboard (Instagram, TikTok, YouTube, LinkedIn, Facebook, X, Threads, Pinterest)
 3. **[Create an API key](https://app.posteverywhere.ai/developers)** under Settings → Developers
 4. **Install the SDK** (above) and start building
-5. **[Read the full API docs](https://developers.posteverywhere.ai)** for every endpoint
+5. **[Read the full API docs](https://posteverywhere.ai/docs)** for every endpoint
 
 ## Accounts
 
@@ -161,7 +159,7 @@ await client.posts.update('post-id', { content: 'Updated content' });
 await client.posts.delete('post-id');
 ```
 
-📖 [Full posts API reference →](https://developers.posteverywhere.ai/api/create-post)
+📖 [Full posts API reference →](https://posteverywhere.ai/docs/api/create-post)
 
 ## Bulk Scheduling
 
@@ -234,7 +232,7 @@ const { media: files } = await client.media.list({ type: 'image' });
 await client.media.delete('media-id');
 ```
 
-📖 [Media requirements per platform →](https://developers.posteverywhere.ai/media-requirements)
+📖 [Media requirements per platform →](https://posteverywhere.ai/docs/media-requirements)
 
 ## AI Image Generation
 
@@ -269,7 +267,7 @@ The PostEverywhere API is designed to be agent-friendly:
 
 **Using a Claude/MCP-style agent?** Skip this SDK and use [`@posteverywhere/mcp`](https://github.com/posteverywhere/mcp) instead — natural-language scheduling via the [Model Context Protocol](https://modelcontextprotocol.io). Works with [Claude Code](https://docs.claude.com/en/docs/claude-code/overview), Claude Desktop, [Cursor](https://cursor.sh), and other MCP-compatible clients.
 
-📖 [LLM agent system prompt template →](https://developers.posteverywhere.ai/integrations/agent-system-prompt)
+📖 [LLM agent system prompt template →](https://posteverywhere.ai/docs/integrations/agent-system-prompt)
 
 ## Error Handling
 
@@ -301,7 +299,7 @@ try {
 
 Every error includes a `retryable` boolean — use it instead of inferring retry behavior from status codes.
 
-📖 [Full error reference →](https://developers.posteverywhere.ai/errors)
+📖 [Full error reference →](https://posteverywhere.ai/docs/errors)
 
 ## Configuration
 
@@ -321,7 +319,7 @@ const client = new PostEverywhere({
 | **Posts** | 60 | 200 | 1,000 |
 | **AI generation** | — | 60 | — |
 
-The SDK auto-retries on 429 with exponential backoff, respecting the `Retry-After` header. See [`Rate Limits`](https://developers.posteverywhere.ai/rate-limits) for the full breakdown.
+The SDK auto-retries on 429 with exponential backoff, respecting the `Retry-After` header. See [`Rate Limits`](https://posteverywhere.ai/docs/rate-limits) for the full breakdown.
 
 ## Supported Platforms
 
@@ -338,17 +336,17 @@ All eight platforms work on every plan — no per-network add-ons:
 
 ## Documentation
 
-- 📖 [Full API Reference](https://developers.posteverywhere.ai) — every endpoint, every parameter
-- 🔐 [Authentication](https://developers.posteverywhere.ai/authentication) — API keys and scopes
-- ⚠️ [Error Handling](https://developers.posteverywhere.ai/errors) — error codes, retry strategies, `retryable` flag
-- ⏱️ [Rate Limits](https://developers.posteverywhere.ai/rate-limits) — per-minute, per-hour, per-day caps
-- 🖼️ [Media Requirements](https://developers.posteverywhere.ai/media-requirements) — file size, format, aspect ratio per platform
-- 🤖 [Building AI Agents](https://developers.posteverywhere.ai/integrations/agents) — system prompt templates and best practices
-- 🚀 [Quick Start Guide](https://developers.posteverywhere.ai/quick-start) — first post in 60 seconds
-- 🔗 [Webhooks](https://developers.posteverywhere.ai/webhooks) — receive publish events on your endpoints
-- 🏷️ [API Scopes](https://developers.posteverywhere.ai/scopes) — fine-grained permission control
-- 📋 [Changelog](https://developers.posteverywhere.ai/changelog) — what's new in the API
-- 🧪 [Testing](https://developers.posteverywhere.ai/testing) — sandbox + local development tips
+- 📖 [Full API Reference](https://posteverywhere.ai/docs) — every endpoint, every parameter
+- 🔐 [Authentication](https://posteverywhere.ai/docs/authentication) — API keys and scopes
+- ⚠️ [Error Handling](https://posteverywhere.ai/docs/errors) — error codes, retry strategies, `retryable` flag
+- ⏱️ [Rate Limits](https://posteverywhere.ai/docs/rate-limits) — per-minute, per-hour, per-day caps
+- 🖼️ [Media Requirements](https://posteverywhere.ai/docs/media-requirements) — file size, format, aspect ratio per platform
+- 🤖 [Building AI Agents](https://posteverywhere.ai/docs/integrations/agents) — system prompt templates and best practices
+- 🚀 [Quick Start Guide](https://posteverywhere.ai/docs/quick-start) — first post in 60 seconds
+- 🔗 [Webhooks](https://posteverywhere.ai/docs/webhooks) — receive publish events on your endpoints
+- 🏷️ [API Scopes](https://posteverywhere.ai/docs/scopes) — fine-grained permission control
+- 📋 [Changelog](https://posteverywhere.ai/docs/changelog) — what's new in the API
+- 🧪 [Testing](https://posteverywhere.ai/docs/testing) — sandbox + local development tips
 
 ## PostEverywhere Around the Web
 
