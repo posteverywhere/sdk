@@ -29,7 +29,7 @@ The official Node.js / TypeScript SDK for [PostEverywhere](https://posteverywher
 
 ## Why PostEverywhere SDK?
 
-- **One API, eight platforms** — write once, publish to Instagram, TikTok, YouTube, LinkedIn, Facebook, X, Threads, and Pinterest
+- **One API, 12 platforms**: write once, publish to Instagram, TikTok, YouTube, LinkedIn, Facebook, X, Threads, Pinterest, Bluesky, Telegram and Discord, plus blog posts to WordPress
 - **Schedule posts** at any future time with timezone awareness
 - **AI image generation** built in (Flux, Ideogram, Gemini 3, Nano Banana Pro)
 - **Multi-platform publishing** with per-platform content overrides
@@ -84,7 +84,7 @@ const scheduled = await client.posts.create({
 ## Getting Started
 
 1. **[Sign up free](https://app.posteverywhere.ai/signup)** at posteverywhere.ai — 7-day free trial
-2. **[Connect your social accounts](https://app.posteverywhere.ai/accounts)** in the dashboard (Instagram, TikTok, YouTube, LinkedIn, Facebook, X, Threads, Pinterest)
+2. **[Connect your social accounts](https://app.posteverywhere.ai/accounts)** in the dashboard (Instagram, TikTok, YouTube, LinkedIn, Facebook, X, Threads, Pinterest, Bluesky, Telegram, Discord or WordPress)
 3. **[Create an API key](https://app.posteverywhere.ai/developers)** under Settings → Developers
 4. **Install the SDK** (above) and start building
 5. **[Read the full API docs](https://posteverywhere.ai/docs)** for every endpoint
@@ -323,7 +323,7 @@ The SDK auto-retries on 429 with exponential backoff, respecting the `Retry-Afte
 
 ## Supported Platforms
 
-All eight platforms work on every plan — no per-network add-ons:
+All 12 platforms work on every plan, with no per-network add-ons:
 
 - **[Instagram Scheduler](https://posteverywhere.ai/instagram-scheduler)** — feed, reels, stories, carousels
 - **[TikTok Scheduler](https://posteverywhere.ai/tiktok-scheduler)** — videos, photo carousels
@@ -333,6 +333,10 @@ All eight platforms work on every plan — no per-network add-ons:
 - **X (Twitter) Scheduler** — text, threads, media, tier-aware char limits
 - **Threads Scheduler** — text and media posts
 - **Pinterest Scheduler** — pins to boards
+- **Bluesky Scheduler**: text and media posts
+- **Telegram Scheduler**: text and media posts
+- **Discord Scheduler**: text and media posts
+- **WordPress**: blog posts to self-hosted WordPress and WordPress.com
 
 ## Documentation
 
@@ -374,7 +378,7 @@ Every plan includes every platform — these are the per-platform landing pages:
 - 📺 [YouTube Scheduler](https://posteverywhere.ai/youtube-scheduler)
 - 💼 [LinkedIn Scheduler](https://posteverywhere.ai/linkedin-scheduler)
 - 👍 [Facebook Scheduler](https://posteverywhere.ai/facebook-scheduler)
-- 🐦 X (Twitter), Threads, Pinterest also supported on every plan
+- 🐦 X (Twitter), Threads, Pinterest, Bluesky, Telegram, Discord and WordPress also supported on every plan
 
 ## Related
 
@@ -395,4 +399,4 @@ MIT — see [LICENSE](LICENSE).
 
 ---
 
-Built by the team at [PostEverywhere](https://posteverywhere.ai). The smarter way to schedule social media posts to [Instagram](https://posteverywhere.ai/instagram-scheduler), [TikTok](https://posteverywhere.ai/tiktok-scheduler), [YouTube](https://posteverywhere.ai/youtube-scheduler), [LinkedIn](https://posteverywhere.ai/linkedin-scheduler), [Facebook](https://posteverywhere.ai/facebook-scheduler), X, Threads, and Pinterest from one place.
+Built by the team at [PostEverywhere](https://posteverywhere.ai). The smarter way to schedule social media posts to [Instagram](https://posteverywhere.ai/instagram-scheduler), [TikTok](https://posteverywhere.ai/tiktok-scheduler), [YouTube](https://posteverywhere.ai/youtube-scheduler), [LinkedIn](https://posteverywhere.ai/linkedin-scheduler), [Facebook](https://posteverywhere.ai/facebook-scheduler), X, Threads, Pinterest, Bluesky, Telegram, Discord and WordPress from one place.
