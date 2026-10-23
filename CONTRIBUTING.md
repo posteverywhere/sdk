@@ -43,7 +43,7 @@ export POSTEVERYWHERE_API_KEY=pe_live_...
 node -e "import('./dist/index.mjs').then(m => new m.default({apiKey: process.env.POSTEVERYWHERE_API_KEY}).accounts.list().then(console.log))"
 ```
 
-You'll need a PostEverywhere account to test against the live API. [Sign up free](https://app.posteverywhere.ai/signup) — 7-day trial, no credit card required for the trial period.
+You'll need a PostEverywhere account to test against the live API. [Sign up](https://app.posteverywhere.ai/signup) — 7-day free trial, card required.
 
 ## Pull request checklist
 
